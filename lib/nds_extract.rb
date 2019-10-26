@@ -25,10 +25,11 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
+  source.map{|director| director[:name]}
 end
 
 def total_gross(source)
+  list_of_directors(source).reduce(0){|total, name| total + directors_totals(source)[name]}
   # Write this implementation
   #
   # Should use methods:
